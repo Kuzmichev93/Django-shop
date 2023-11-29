@@ -1,0 +1,25 @@
+{% extends 'banksite/base.html'%}
+
+{% block content%}
+{% for k in page_obj%}
+<p>{{k}}</p>
+{%endfor%}
+
+{% if m %}
+   {{m}}
+{%endif%}
+
+<nav class="list-pages">
+    <ul>
+        {% for p in page_obj.paginator.page_range %}
+        {% if page_obj.number == p %}
+        <li class="page-num page-num-selected"></li>
+        {%else%}
+        <li class="page-num">
+            <a href="?page={{p}}">{{p}}</a>
+        </li>
+        {%endif%}
+        {%endfor%}
+    </ul>
+</nav>
+{% endblock %}

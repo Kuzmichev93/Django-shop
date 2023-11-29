@@ -1,0 +1,1151 @@
+html, body {
+	font-family: 'Arial';
+	margin: 0;
+	padding: 0;
+    height:100%;
+    width:100%;
+	color: #444;
+    position:relative;
+}
+
+.header{
+
+
+padding: 16px 0 44px;
+background:#632250;
+position:relative;
+flex: 0 0 auto;
+box-sizing: border-box;}
+
+.header-menu{
+max-width: 1504px;
+padding: 0 32px;
+margin: 0 auto;}
+
+.header_bottom{
+display: flex;
+align-items: center;
+width:100%;}
+
+.header_element_left{
+display:flex;
+align-items: center;
+width:15%}
+
+.header-element-reight{
+display:flex;
+justify-content: end;
+align-items: center;
+
+gap: 20px;
+}
+
+.button-name{
+position:relative;
+display:flex;
+width:70px;
+align-items: center;
+flex-direction: column;}
+
+.label{
+
+width:60px;}
+
+.buttons{
+
+position: relative;
+border-radius:10px;
+margin:0 0 0 15px;
+width:45px;
+height:40px;
+background:#632250;
+}
+.buttons-text{
+position:relative;
+padding:6px;
+font-size:30px;
+color:#FFFFFF;
+writing-mode: vertical-rl;}
+
+.listing{
+
+    border:3px solid black;
+    z-index:3;
+    border-radius:10px;
+    display:none;
+    background:white;
+	height:80%;
+	width:10%;
+	position:absolute;
+	top:0px;
+}
+.listing_child{
+    border:3px solid black;
+    z-index:3;
+    border-radius:10px;
+    float: right;
+    background:white;
+    width: 290px;
+    height: 550px;
+    display:none;
+	top:0px;
+	}
+
+#closebutton{
+padding:0;
+height:30px;
+width:30px;
+position:absolute;
+top:20px;
+left:300px;}
+
+#close_button{
+position:absolute;
+bottom:2px;
+left:2px;
+height:30px;
+width:30px;
+background: url('https://api.iconify.design/mi/close.svg?color=white') ;
+background-repeat: no-repeat;
+background-size: 100% 100%;
+}
+
+.button-basket{
+position:relative;
+margin-left: 36px;
+width:30px;
+}
+
+
+.basket-image{
+height:30px;
+
+background: url('https://api.iconify.design/simple-line-icons/basket.svg?color=white');
+background-repeat: no-repeat;
+background-size: 100% 100%;
+}
+.button-text{
+font-size:14px;
+opacity:0.5;
+color:#FFFFFF;
+margin-top: 5px;}
+
+
+
+.button-reg{
+position:relative;
+border:none;
+margin-left: 36px;
+
+background:none;
+
+}
+
+.enter-image{
+height:30px;
+background: url('https://api.iconify.design/material-symbols/person.svg?color=white');
+background-repeat: no-repeat;
+background-size: 100% 100%;}
+
+.button-req-ikon{
+}
+
+
+
+.search{
+
+
+position:relative;
+/*width:550px;
+
+/*top:30px;
+left:450px;
+opacity:0.1;
+height:40px;
+border-radius:10px;
+background:#FFFFFF;
+*/
+}
+.search-catalog1{
+display:none;
+position:relative;
+flex-grow: 1;
+margin: 0 52px 0 20px;}
+
+.search input{
+
+font-size: 18px;
+width:90%;
+border-radius: 56px;
+padding:16px 90px 16px 44px;
+margin: 0;
+background: rgba(255,255,255,.2);
+line-height: 24px;
+cursor: pointer;
+outline:0;
+border:none;
+/*outline: none;
+left:45px;
+border:none;
+height:30px;
+position:absolute;
+top:5px;
+width:200px;
+*/}
+
+.search-img{
+opacity:0.1;
+margin-left:10px;
+position: absolute;
+
+height:30px;
+width:30px;
+background: url('https://api.iconify.design/material-symbols/search.svg?color=white');
+background-repeat: no-repeat;
+background-size: 100% 100%;}
+
+
+.search-history{
+display:none;
+font-size: 16px;
+line-height: 22px;
+width: 90%;
+position: absolute;
+z-index: 29;
+top: 100%;
+left: 0;
+background:white;
+height:100px;
+padding: 16px 90px 16px 44px;}
+
+
+
+.search-catalog{
+cursor:pointer;
+position:relative;
+width:60%;
+}
+.search-bottom{
+
+display:none;
+z-index:99;
+background:white;
+position:absolute;
+width:100%;
+height:250px;
+overflow: hidden;
+}
+
+.search-top{
+
+display:flex;
+align-items: center;
+position:relative;
+width:100%;}
+
+.search-bottom-catalog-li{
+position:relative;
+display:flex;
+align-items: center;
+height:100%;
+width:100%;
+margin-bottom:8px;}
+
+.search-bottom-catalog-value{
+position:relative;
+display:flex;
+/*height:100%;*/
+flex-grow: 1;
+padding:10px;}
+
+.search-bottom-catalog-pv{
+position:relative;
+height:100%;
+width:100%;}
+
+.search-bottom-catalog-delete{
+
+position:relative;
+display:flex;
+/*height:100%;*/
+/*width:20%;*/
+padding:10px;}
+
+.search-bottom-catalog-pd{
+color:#868695;
+position:relative;
+height:100%;
+width:100%;}
+
+.search-top input{
+cursor:pointer;
+font-size: 18px;
+background: rgba(255,255,255,.2);
+border-radius: 56px;
+height:50px;
+font-family: monospace;
+width:100%;
+padding-left: 40px;
+outline: 0;
+border:none;
+}
+
+.search-bottom-catalog{
+display:flex;
+height:100%;
+width:100%;
+margin:10px;
+
+}
+.search-bottom-catalog-list{
+display:block;
+position:relative;
+width:100%;
+height:30px;
+padding:0px;}
+
+.addres{
+position:relative;
+width:50px;
+}
+
+.address-image{
+
+display:block;
+cursor:pointer;
+height:30px;
+
+background: url('https://api.iconify.design/mdi/map-marker-outline.svg?color=white');
+background-repeat: no-repeat;
+background-size: 100% 100%;}
+
+
+.list_menu{
+list-style-type:none;
+width:200px;
+color:black;
+cursor:pointer;}
+
+.nm1{
+width:10px;
+display:none}
+
+.mag{
+position:relative;}
+
+.magazin{
+
+position:relative;
+height:350px;
+margin:20px 20px 0px 20px;
+display: inline-block;
+vertical-align: top;
+width:220px;
+border-radius:15px;
+}
+
+
+.imge{
+
+position:absolute;
+cursor:pointer;
+margin:0 0 0 9px;
+border-radius:15px;
+width:200px;
+height:auto;
+}
+
+.magazin-title{
+z-index:2;
+position:absolute;
+top:290px;
+cursor:pointer;
+margin:10px 0 0 9px;}
+
+.magazin-price{
+top:270px;
+position:absolute;
+cursor:pointer;
+z-index:2;
+margin:10px 0 0 9px;}
+
+.magazin-pay{
+top:350px;
+z-index:2;
+display:none;
+cursor:pointer;
+position:relative;
+border-radius:10px;
+height:30px;
+width:120px;
+background:#C1448F;
+margin:10px 0 0 9px;}
+
+.magazin-pay-kor{
+top:5px;
+z-index:2;
+position:absolute;
+left:22px;
+
+text-decoration:none;
+color:white;
+font-size:14px;
+}
+
+.af{
+display:none;
+border-radius:15px;
+top:-10px;
+z-index:1;
+position:absolute;
+height:350px;
+width:220px;
+
+}
+
+.basket{
+
+border-radius:15px;
+height:100%;
+width:100%;
+background:#F2F2F2}
+
+.basket-centr{
+margin:5px;
+left:150px;
+position:relative;
+border-radius:15px;
+background:white;
+min-height:180px;
+width:550px;}
+
+
+
+.magazin-image1{
+margin:5px 0 5px;
+position:relative;}
+
+.basket-imge{
+margin:5px 0 5px 30px;
+border-radius:15px;
+width:120px;
+display:block;}
+
+.check{
+top:70px;
+position:absolute;}
+
+.basket-title{
+margin:0 0 0 10px;
+position:absolute;
+top:10px;
+left:150px;}
+
+.basket-price{
+right:5px;
+top:12px;
+margin:0 10px;
+position:absolute;}
+
+#price{
+border-radius:15px;
+top:105px;
+right:5px;
+position:absolute;
+background:white;
+width:300px;
+height:200px;}
+
+#price1{
+margin:0 10px;
+float:right;}
+
+#basket-button{
+position:absolute;
+top:30px;
+border:0;
+width:150px;
+height:30px;
+border-radius:15px;
+color:white;
+background:#C1448F}
+
+.name-site{
+position:relative;
+width:100px;}
+
+.name-container{
+width:80%;
+margin:0 auto}
+
+.name-container img{
+cursor:pointer;
+width:100%;
+
+}
+
+.header-containter{
+position:relative;
+width:90%;
+margin:0 auto;}
+
+.city-info{
+cursor:pointer;
+padding-left: 15px;
+box-sizing: border-box
+left:50px;
+}
+.city{
+opacity:0.5;
+font-size:15px;
+display: inline-block;
+
+color:white;}
+
+.city-ikon{
+opacity:0.5;
+display: inline-block;
+width:15px;
+height:15px;
+background: url('https://api.iconify.design/mdi/map-marker-outline.svg?color=white');
+background-repeat: no-repeat;
+background-size: 100% 100%;}
+
+.register{
+height:100%;
+background:#F2F2F2;
+}
+
+.register-user{
+display:flex;
+position:relative;
+background:#fff;
+border-radius:10px;
+width:410px;
+height:460px;
+box-shadow:0px 0px 10px #aaa;;
+
+margin:50px auto 0 auto;
+}
+
+.register-user-frame{
+display:flex;
+position:relative;
+height:100%;
+width:400px;
+padding:60px 20px 20px;}
+
+.form-reg{
+display:flex;
+position:relative;
+height:100%;
+width:400px;}
+
+.reg_list{
+
+list-style:none;
+padding:0;
+margin:0;
+}
+
+.reg_list li{
+margin:10px 0 10px 0;}
+
+.reg_title{
+margin:10px;
+min-width:80px;
+display:inline-block;}
+
+.reg_input{
+
+border:none;
+border-bottom:1px solid #aaa;
+font-size:16px;
+}
+.reg_input:focus {
+	outline: none;
+	border-bottom: 1px solid  rgb(255, 0, 255);
+}
+
+
+
+#error-messange{
+margin:10px;
+color:red;}
+
+.wrapper{
+display:flex;
+flex-direction: column;
+height:100%;
+width:100%;
+position:relative;
+}
+
+.footer{
+position:relative;
+background-color: #481173;
+min-height:150px;
+}
+
+.footer::before{
+content: "";
+    display: block;
+    background: #F2F2F2;
+    border-radius: 0 0 24px 24px;
+    width: 100%;
+    height: 24px;
+}
+
+.header::after{
+content: '';
+    display: block;
+    width: 100%;
+    height: 24px;
+    border-radius: 24px 24px 0 0;
+    background: #FAFAFA;
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+}
+
+
+
+.contact{
+display:flex;
+position:relative;
+align-items: center;
+height:25px;
+max-width:500px;
+padding:5px;
+}
+
+.contact-info{
+
+position:relative;
+color:white;
+margin:5px;
+}
+
+.contact-tg{
+cursor:pointer;
+display:flex;
+align-items: center;
+
+position:relative;
+
+
+
+}
+
+.tg{
+
+position:relative;
+color:white;}
+
+
+.contact-img{
+height:20px;
+width:20px;
+background: url('https://api.iconify.design/logos/telegram.svg');
+background-repeat: no-repeat;
+background-size: 100% 100%;
+margin:5px;}
+.captch{
+
+display:none;
+position:absolute;
+left:850px;
+z-index:1;}
+
+.button-register{
+cursor:pointer;
+font-size:15px;
+color:white;
+border-radius:10px;
+border:none;
+height:30px;
+background:#C1448F;
+margin: 0 auto;
+display: block;
+
+}
+.button-register-user{
+cursor:pointer;
+font-size:15px;
+color:white;
+border-radius:10px;
+border:none;
+height:30px;
+background:#C1448F;
+margin: 0 auto;
+display: block;}
+
+.background-register{
+width:100%;
+height:100%;
+display:none;
+position:fixed ;
+top:0;
+left:0;
+background:rgba(0, 0, 0, .20);
+
+}
+.captcha{
+display: block;
+margin: 0 auto;
+
+}
+.captcha img{
+width:150px;}
+
+
+.popup{
+display:none;
+position:fixed;
+z-index:99;
+width:auto;
+height:100%}
+
+
+.list-menu-parent{
+display:none;
+border-right: 1px solid #CFCFCF;
+padding:0;
+margin:0;
+float: left;
+
+background:#fff;
+width:250px;
+height:100%;
+}
+
+.list-menu-child{
+display:none;
+border-right: 1px solid #CFCFCF;
+padding:0;
+margin:0;
+float:left;
+background:#fff;
+width:250px;
+height:100%;
+
+}
+
+.popup-close{
+padding:0 0 0 5px;
+cursor:pointer;
+height:30px;
+width:30px;
+background: url('https://api.iconify.design/mi/close.svg?color=white') ;
+background-repeat: no-repeat;
+background-size: 100% 100%;
+
+margin:0;
+float: left;}
+
+.li-parent{
+height:25px;
+width:150px;
+border-radius:8px;
+cursor:pointer;
+list-style-type:none;
+margin:5px;}
+
+.li-child{
+height:25px;
+width:150px;
+border-radius:8px;
+cursor:pointer;
+margin:5px;
+list-style-type:none;
+}
+
+.dv-parent{
+
+width:60px;
+
+padding:4px 0 0 7px;}
+
+.div-child{
+
+width:100px;
+
+padding:4px 0 0 7px;}
+
+
+
+.main-register{
+position:relative;
+display:flex;
+height:100%;
+width:100%;
+background:#F2F2F2;}
+
+.user{
+position:relative;
+height:850px;
+width:400px;
+background:white;
+border-radius:15px;
+padding:0;
+}
+/*box-shadow: 0px 0px 10px #aaa;}*/
+
+.user-content{
+
+position:relative;
+height:100%;
+padding:60px 20px 60px 20px;
+box-sizing: border-box;
+}
+
+.user-content-top{
+display:flex;
+position:relative;
+align-items: center;
+width:90%;
+height:10%;
+margin: 0 auto;
+cursor:pointer;
+}
+.sl{
+font-size:30px;
+padding:5px;
+}
+.user-content-top-value{
+position:relative;
+width:100%;
+
+
+}
+
+.user-content-top-value-left{
+position:relative;
+display:flex;
+
+
+
+}
+
+.user-value-left{
+position:relative;
+display:flex;
+font-size:30px;
+opacity:0.4;
+
+}
+.user-value-reight{
+position:relative;
+font-size:30px;
+width:100%;
+
+}
+
+.user-content-bottom{
+display:flex;
+position:relative;
+width:100%;
+height:90%;}
+
+.user-form{
+position:relative;
+
+width:100%;
+height:100%;}
+
+.user-contact{
+position:relative;
+display:flex;
+margin-top:15px;
+height:15%;
+width:100%;}
+
+.user-container{
+display:flex;
+position:relative;
+width:90%;
+margin:0 auto;
+
+align-items: center;
+
+}
+.user-name{
+position:absolute;
+display:block;
+top:auto;
+transition: all 0.2s ease 0s;
+opacity: 0.4;
+margin-left:2px;}
+
+.user-container input{
+height:20px;
+width:100%;
+border:none;
+outline: 0;
+background: white;
+border-bottom: 1px solid #aaa;
+font-size: 16px}
+
+.captcha-container{
+
+display:block;
+position:relative;
+height:200px;
+width:100%;}
+
+.captcha-form{
+position:relative;
+height:10%;
+width:90%;
+margin:0 auto;}
+
+.button-container{
+position:relative;
+margin-top: 15px;
+width:100%;
+height:60px;
+
+
+}
+
+/*
+.user-buttom{
+position:relative;
+height:100%;
+width:100%;
+border-radius:15px;
+background: #C1448F;
+border:none;
+}
+
+.user-buttom div{
+
+color:white;
+cursor:pointer;
+position:relative;
+font-size:20px;}
+*/
+.user-buttom{
+display: block;
+    cursor: pointer;
+    height: 100%;
+    width: 100%;
+    border-radius: 15px;
+    background: #C1448F;
+    border: none;
+    color: white;
+    font-size: 20px;}
+
+
+.user-osn{
+position: relative;
+height: 850px;
+width: 450px;
+display:flex;
+margin:20px auto 20px;}
+
+
+.enter-close{
+display:flex;
+position:relative;
+width:40px;
+height:40px;
+
+}
+
+.enter-close div{
+cursor: pointer;
+height:100%;
+width: 100%;
+background: url(https://api.iconify.design/mi/close.svg?color=white);
+background-repeat: no-repeat;
+background-size: 100% 100%;
+margin: 0;
+
+}
+
+.user-input{
+width:100%}
+
+.user-error{
+ display:none;
+ position:absolute;
+ bottom:0;
+ width:100%;
+ color:red;
+ font-size:14px;}
+
+ .ms-error{
+display: none;
+position: absolute;
+bottom: 15px;
+height: 20px;
+width: 100%;
+color: red;
+font-size: 14px;}
+
+.user-enter{
+position: relative;
+height: 450px;
+width: 450px;
+display: none;
+
+margin: 20px auto 20px;}
+
+.window-enter{
+position: relative;
+height: 100%;
+width: 400px;
+background:white;
+border-radius: 15px;}
+
+.container-enter{
+position: relative;
+height: 100%;
+padding: 60px 20px 60px 20px;
+box-sizing: border-box;}
+
+.enter-form{
+position:relative;
+width:100%;
+height:90%;
+}
+
+.enter-form form{
+position:relative;
+width:100%;
+height:100%;
+}
+
+.enter-contact{
+position: relative;
+display: flex;
+margin-top: 15px;
+height: 30%;
+width: 100%;}
+
+.enter-inner-container{
+display: flex;
+position: relative;
+width: 90%;
+margin: 0 auto;
+align-items: center}
+
+.enter-botton{
+position: relative;
+margin-top: 15px;
+width: 100%;
+height: 20%;}
+
+.enter-botton-container{
+position: relative;
+height:100%;
+margin:0 auto;
+width: 90%;}
+
+.enter-botton-container button{
+display:block;
+cursor:pointer;
+height:100%;
+width: 100%;
+border-radius: 15px;
+background: #C1448F;
+border: none;
+color:white;
+font-size: 20px;}
+
+.hidden-button{
+display:none;
+cursor:pointer;
+height:100%;
+width: 100%;
+border-radius: 15px;
+background: #C1448F;
+border: none;
+color:white;
+font-size: 20px;
+}
+.hidden-button div{
+position:relative;
+
+margin:auto}
+
+.enter-input{
+height: 20px;
+width: 100%;
+border: none;
+outline: 0;
+background: white;
+border-bottom: 1px solid #aaa;
+font-size: 16px;
+}
+
+.enter-error{
+display:none;
+position: absolute;
+bottom: 0;
+width: 100%;
+color: red;
+font-size: 14px;}
+
+.error-email{
+display:none;
+position: absolute;
+bottom: 15px;
+width: 100%;
+color: red;
+font-size: 14px;}
+
+.error-password{
+display:none;
+position: absolute;
+bottom: 15px;
+width: 100%;
+color: red;
+font-size: 14px;
+}
+
+.error-input-value{
+display:none;
+position: absolute;
+bottom: 15px;
+width: 100%;
+color: red;
+font-size: 14px;
+}
+
+.user-error-value{
+display: none;
+position: absolute;
+bottom: 15px;
+width: 100%;
+color: red;
+font-size: 14px;}
+
+.error-captcha{
+display: none;
+position: absolute;
+bottom: 15px;
+width: 100%;
+color: red;
+font-size: 14px;
+}
+
+.error-value-search{
+width:50%;
+margin:auto;
+}
+
+.content-info{
+padding: 10px;
+box-sizing: border-box;
+color: white;
+display:flex;
+width:100%;}
+
+.footer-container{
+display:flex;
+height:100%;
+flex-direction: column;
+justify-content: center;
+}

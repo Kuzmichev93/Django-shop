@@ -1,0 +1,63 @@
+{% extends 'banksite/base.html'%}
+{%load static%}
+
+{%block content%}
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=5b5c3675-f390-4aa1-9472-773fc0c3abc1&lang=ru_RU" type="text/javascript"></script>
+
+
+
+
+
+
+<div class="main-register">
+    <div class="map-container">
+        <div id="map" style="width: 800px; height: 600px"></div>
+    </div>
+</div>
+
+
+
+<script>
+
+        ymaps.ready(init);
+        function init(){
+            var myMap = new ymaps.Map("map", {
+                center: [55.55,42.06],
+                zoom: 10
+            });
+            var myGeoObject = new ymaps.GeoObject({
+            geometry:{
+            type: "Point",
+            coordinates: [55.55,42.06]},
+            properties: {
+                           hintContent: "KD",
+                             balloonContentHeader: "KD",
+                           balloonContentBody: "Магазин",
+                           population: 11848762
+                       }
+            });
+
+
+            myMap.geoObjects.add(myGeoObject);
+            myMap.events.add('click', function (e) {
+               myMap.balloon.open(e.get('coords'), 'Щелк!');
+               console.log(myMap.getType());});
+
+
+        };
+
+       ymaps.ready(it);
+       function it(){
+       var location = ymaps.geolocation.get({ provider: 'browser'});
+       //console.log(location)
+
+       var ff=location.then(function(res){
+
+       let city=document.querySelector(".city");
+       city.innerText=res.geoObjects.get(0).properties.get("name")
+       console.log(res.geoObjects.get(0).properties.get("name"))})
+       };
+
+</script>
+{%endblock%}
+

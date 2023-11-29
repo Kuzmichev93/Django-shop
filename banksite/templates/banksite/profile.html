@@ -1,0 +1,29 @@
+{% extends 'banksite/base.html'%}
+{%load static%}
+{% block content%}
+<div class="main-profile">
+    <div class="profile-container">
+        <div class="profile-menu">
+            <div class="container-user">
+                <div class="profile-user">
+                    <div class="window-user">
+                        {% if request.user.is_authenticated%}
+                        <div class="user-circle">
+
+                            <div class="user-circle-name" >{{request.user.first_name}}
+                            </div>
+
+                        </div>
+                        <h2 class="user-firstname">{{request.user.first_name}}</h2>
+                        <a class="exit" href="{% url 'logout_user' %}">Вытий</a>
+                        {%endif%}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+<script type="text/javascript" src="{% static 'banksite/js/profile.js' %}"></script>
+{%endblock%}

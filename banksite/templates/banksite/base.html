@@ -1,0 +1,349 @@
+{%load static%}
+
+{%load banksite_tags%}
+{% list_menu_headers as list_menu%}
+
+{% list_menu_1 as mn%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title translate="no">KD</title>
+
+    <script>
+    const hosts ="127.0.0.1:8000/"  //"kuzmicxn.beget.tech/";
+    let list_menu = {{list_menu|safe}};
+
+    let TOKEN = "{{ csrf_token }}";
+    let mn={{mn|safe}};
+    {% if request.session.pay%}
+    let session={{request.session.pay|safe}};
+    {%endif%}
+    {% if request.session.search%}
+    let value_search={{request.session.search|safe}};
+    {%endif%}
+
+
+
+
+    </script>
+    <script type="text/javascript" src="{% static 'banksite/js/jquery-3.7.1.min.js' %}"></script>
+    <link type="text/css" href="{% static 'banksite/css/style.css'%}" rel="stylesheet">
+    <link type="text/css" href="{% static 'banksite/css/profile.css'%}" rel="stylesheet">
+    <link type="text/css" href="{% static 'banksite/css/shop.css'%}" rel="stylesheet">
+    <link type="text/css" href="{% static 'banksite/css/basket.css'%}" rel="stylesheet">
+    <link type="text/css" href="{% static 'banksite/css/address.css'%}" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="{% static 'banksite/site/site_imge.png' %}"/>
+
+
+</head>
+
+<body class="ru">
+
+
+<div class="wrapper">
+
+<div class="popup">
+
+    <div class="list-menu-parent">
+        <ul>
+        </ul>
+    </div>
+    <div class="list-menu-child">
+
+    </div>
+    <div class="popup-close"></div>
+</div>
+
+
+
+{% block lis%}
+
+<header class="header">
+    <div class="header-menu">
+        <div class="header-containter">
+        <div class="header_top">
+            <div class="city-info">
+                <div class="city-ikon"></div>
+                <div class="city"></div>
+            </div>
+        </div>
+       <div class="header_bottom">
+           <div class="header_element_left">
+
+              <div class="buttons">
+                <div class="buttons-text">|||</div>
+              </div>
+             <div class="name-site">
+                 <div class="name-container">
+                  <img src="{% static 'banksite/site/site_imge.png' %}">
+                     <a href="{% url 'home' %}"></a>
+                 </div>
+             </div>
+           </div>
+
+
+         <div class="search-catalog">
+             <div class="search-top">
+                 <div class="search-img"></div>
+                 <input type="text" name="search">
+                 <a href="{% url 'search' %}"></a>
+             </div>
+             <div class="search-bottom">
+                 <div class="search-bottom-catalog">
+                     <ul class="search-bottom-catalog-list">
+                     <input class="hidden" name="hiddens" type="hidden">
+                     </ul>
+                 </div>
+             </div>
+         </div>
+
+         <div class="search-catalog1">
+
+           <div class="search-img"></div>
+             <div class="search">
+
+             <input type="text" name="search">
+                 <a href="{% url 'search' %}"></a>
+                 <div class="search-history">
+                     <div class="s"></div>
+
+                 </div>
+             </div>
+
+
+         </div>
+           <div class="header-element-reight">
+
+               <div class="button-name">
+
+                   <div class="label address-image"></div>
+                   <div class="button-text">Адрес</div>
+                   <a href="{% url 'address'%}"></a>
+               </div>
+
+               {%if request.user.is_authenticated%}
+               <div class="button-name profile">
+                   <div class="label enter-image"></div>
+                   <div class="button-text">Профиль</div>
+                   <a href="{% url 'profile'%}"></a>
+
+               </div>
+               {%else%}
+               <div class="button-name enter">
+                   <div class="label enter-image"></div>
+                   <div class="button-text">Войти</div>
+                   <a href="{% url 'home'%}" name="enter"></a>
+               </div>
+               {%endif%}
+               <div class="button-name">
+                   <div class="label basket-image"></div>
+                   <div class="button-text">Корзина</div>
+                   <div class="button-basket-value">
+                       <div class="sum-basket-value">{{request.session.pay}}</div>
+                   </div>
+                   <a href="{% url 'basket'%}"></a>
+               </div>
+           </div>
+       </div>
+        </div>
+       </div>
+</header>
+
+    <div class="background-register">
+        <div class="user-osn">
+        <div class="user">
+            <div class="user-content">
+
+                <div class="user-content-top">
+                    <div class="user-content-top-value-left">
+                        <div class="user-value-left">Войти</div>
+                    </div>
+                    <div class="sl">/</div>
+                    <div class="user-content-top-value">
+                        <div class="user-value-reight">Регистрация</div>
+                    </div>
+
+                </div>
+
+                <div class="user-content-bottom">
+                    <form class="user-form" method="post" action="{% url 'register' %}">
+                        {%csrf_token%}
+                        <div class="user-contact">
+                            <div class="user-container">
+                                <div class="user-name">Ваше имя*</div>
+                                <input  type="text" class="user-input" name="name">
+                                <div class="user-error">Поле может содержать латинские и
+                                    русские буквы, дефис, пробел</div>
+                            </div>
+
+                        </div>
+                        <div class="user-contact">
+                            <div class="user-container">
+                                <div class="user-name" >Ваше фамилие*</div>
+                                <input  type="text" class="user-input" name="surname" >
+                                <div class="user-error">Поле может содержать латинские и
+                                    русские буквы, дефис, пробел</div>
+                            </div>
+                        </div>
+                        <div class="user-contact">
+                            <div class="user-container">
+                                <div class="user-name" translate="no">Email*</div>
+                                <input  type="text" class="user-input" name="email" >
+                                <div class="user-error">Поле может содержать латинские и
+                                    русские буквы, дефис,точку</div>
+                                <div class="ms-error">{{messange_error}}</div>
+                            </div>
+                        </div>
+                        <div class="user-contact">
+                            <div class="user-container">
+                                <div class="user-name">Ваш пароль*</div>
+                                <input  type="text" class="user-input" name="password" >
+                                <div class="user-error-value"></div>
+                                <div class="error-captcha">{% if request.session.error_captcha%}{{request.session.error_captcha}}{%endif%}</div>
+                            </div>
+                        </div>
+                        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+                        <div class="captcha-container">
+                            <div class="captcha-form">
+                                <form action="?" method="POST">
+                                    {%csrf_token%}
+                                    <div class="g-recaptcha" data-sitekey="6Lfr3eAoAAAAAMBpIoovPBpbFBXMz4G9n8dHHU_p"></div>
+                                    <br/>
+
+                                </form>
+
+                                <div class="button-container">
+                                    <button type="submit" class="user-buttom">Зарегистрироваться
+
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+            <div class="enter-close close-bottom">
+                <div class="close"></div>
+            </div>
+        </div>
+        <div class="user-enter">
+            <div class="window-enter">
+               <div class="container-enter">
+                   <div class="user-content-top">
+                       <div class="user-content-top-value-left">
+                           <div class="user-value-left enter-left" >Войти</div>
+                       </div>
+                       <div class="sl">/</div>
+                       <div class="user-content-top-value">
+                           <div class="user-value-reight enter-right" >Регистрация</div>
+                       </div>
+
+                   </div>
+                   <div class="enter-form">
+                      <form  method="post" action="{% url 'login_user' %}">
+                          {%csrf_token%}
+                          <div class="enter-contact">
+                              <div class="enter-inner-container">
+                              <div class="user-name enter-value" translate="no">Email*</div>
+                                  {% if request.session.login%}
+                                  <input  type="text" class="enter-input" value="{{request.session.login}}" name="login">
+                                  {%else%}
+                                  <input  type="text" class="enter-input"  name="login">
+                                  {%endif%}
+                                  <div class="enter-error">Поле может содержать латинские и
+                                      русские буквы, дефис,точку</div>
+                                  <div class="error-email">{{error_email}}</div>
+
+                              </div>
+                          </div>
+                          <div class="enter-contact">
+                              <div class="enter-inner-container">
+                              <div class="user-name enter-value" translate="no">Пароль*</div>
+                                  {% if request.session.password%}
+                                  <input  type="text" class="enter-input" value="{{request.session.password}}" name="password">
+                                  {%else%}
+                                  <input  type="text" class="enter-input"  name="password">
+                                  {%endif%}
+                                  <div class="error-password">{{error_password}}</div>
+                                  <div class="error-input-value"></div>
+                              </div>
+                          </div>
+                          <div class="enter-botton">
+                              <div class="enter-botton-container">
+                                  <div class="hidden-button"><div>Войти</div></div>
+                              <button type="submit" class="enter-button">Войти</button>
+                                  <!--<a class="enter-in" href="{% url 'login_user' %}"></a>-->
+                              </div>
+                          </div>
+                      </form>
+
+                   </div>
+               </div>
+
+            </div>
+            <div class="enter-close enter-bottom-close">
+                <div class="close"></div>
+            </div>
+        </div>
+    </div>
+
+<div class="listing">
+    <div class="listing_child"></div></div>
+
+
+
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=5b5c3675-f390-4aa1-9472-773fc0c3abc1&lang=ru_RU" type="text/javascript"></script>
+    <script type="text/javascript" src="{% static 'banksite/js/addres_user.js' %}"></script>
+    <script type="text/javascript" src="{% static 'banksite/js/register.js' %}"></script>
+    <script type="text/javascript" src="{% static 'banksite/js/popup.js' %}"></script>
+
+    <script type="text/javascript" src="{% static 'banksite/js/headers.js' %}"></script>
+    <script type="text/javascript" src="{% static 'banksite/js/jquery-3.7.1.min.js' %}"></script>
+
+
+
+
+{% endblock lis%}
+
+
+
+{% block content%}
+
+{% endblock %}
+    <script type="text/javascript" src="{% static 'banksite/js/search.js' %}"></script>
+    <script type="text/javascript" src="{% static 'banksite/js/shop.js' %}"></script>
+    <footer class="footer">
+        <div class="footer-container">
+        <div class="contact">
+            <div class="contact-info">Связаться с создателем сайта:</div>
+
+            <div class="contact-tg">
+                <div class="contact-img"></div>
+                <div class="tg">@kuza_i</div>
+                <a href="https://t.me/kuza_i"></a>
+                <script type="text/javascript" src="{% static 'banksite/js/footer_tg.js' %}"></script>
+            </div>
+
+
+        </div>
+        <div class="content-info">
+            © 2023 Данный сайт разрабатывается в учебных целях. Коммерческой деятельности сайт не ведет.
+        </div>
+        </div>
+    </footer>
+
+</div>
+<script type="text/javascript" src="{% static 'banksite/js/basket.js' %}"></script>
+</body>
+
+</html>

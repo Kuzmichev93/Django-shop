@@ -1,0 +1,77 @@
+{% extends 'banksite/base.html'%}
+{%load static%}
+{% block content%}
+{% if not name and not ls_name and not username and not password %}
+<div class="register">
+<div class="register-user">
+  <div class="register-user-frame">
+  <form action="{% url 'register' %}" method="post" class="form-reg">
+      {%csrf_token%}
+   <ul class="reg_list">
+      <li>
+          <div class="reg_title">Имя:</div>
+          <input class="reg_input" name="name" type="text">
+      </li>
+       <li>
+           <div class="reg_title">Фамилия:</div>
+           <input class="reg_input" name="ls_name" type="text">
+       </li>
+       <li>
+           <div class="reg_title">Ник:</div>
+           <input class="reg_input" name="username" type="text">
+       </li>
+       <li>
+           <div class="reg_title">Пароль:</div>
+           <input  class="reg_input" name="password" type="text">
+       </li>
+   </ul>
+      <div class="captch">
+          {{form.captcha }}
+          <button class="button-register-user" type="submit">Отправить</button>
+      </div>
+
+  </form>
+    <button class="button-register" type="submit">Зарегистрироваться</button>
+  </div>
+    <div class="background-register"></div>
+</div>
+
+  {%else%}
+<div class="register-user">
+    <div id="error-messange">*Все поля обязательны к заполнению</div>
+    <form action="{% url 'register' %}" method="post">
+        {%csrf_token%}
+        <ul class="reg_list">
+            <li>
+                <div class="reg_title">Имя:</div>
+                <input class="reg_input" name="name" type="text" value="{{name}}">
+            </li>
+            <li>
+                <div class="reg_title">Фамилия:</div>
+                <input class="reg_input" name="ls_name" type="text" value="{{ls_name}}">
+            </li>
+            <li>
+                <div class="reg_title">Ник:</div>
+                <input class="reg_input" name="username" type="text" value="{{username}}">
+            </li>
+            <li>
+                <div class="reg_title">Пароль:</div>
+                <input  class="reg_input" name="password" type="text" value="{{password}}">
+            </li>
+        </ul>
+        {{ form.captcha.errors }}
+
+    </form>
+
+    <button  class="button-register" type="submit">Зарегистрироваться</button>
+</div>
+
+
+{%endif %}
+
+</div>
+
+
+{%endblock%}
+
+<script type="text/javascript" src="{% static 'banksite/js/register_page.js' %}"></script>

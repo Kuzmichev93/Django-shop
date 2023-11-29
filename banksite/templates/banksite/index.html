@@ -1,0 +1,81 @@
+{% extends 'banksite/base.html'%}
+{%load static%}
+
+{% block content%}
+
+
+<div class="main-shop">
+    <input type="hidden" class="len-session" value="{{request.session.len_session|safe}}">
+    <div class="shop-container">
+        {%if men and wom%}
+        {% for k in men %}
+        <input type="hidden" value="{{k.id}}" class="shop-id">
+        <div class="product-container">
+            <div class="product-container-top">
+                <div class="product-top">
+                    <div class="product-top-list">
+                        <div class="product-container-button">
+                            <div class="product-top-button">
+                                <div class="button-text1">В корзину</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="product">
+                <div class="product-container-image">
+                    <img src="{{k.image.url}}" class="product-image">
+                </div>
+                <div class="product-container-info">
+                    <div class="product-container-price">
+                        <div class="product-price">{{k.price}} ₽</div></div>
+                    <div class="product-container-text">
+                        <div class="product-text">{{k.title}}</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        {%endfor%}
+
+        {% for k in wom %}
+        <input type="hidden" value="{{k.id}}" class="shop-id">
+        <div class="product-container">
+            <div class="product-container-top">
+                <div class="product-top">
+                    <div class="product-top-list">
+                        <div class="product-container-button">
+                            <div class="product-top-button">
+                                <div class="button-text1">В корзину</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="product">
+                <div class="product-container-image">
+                    <img src="{{k.image.url}}" class="product-image">
+                </div>
+                <div class="product-container-info">
+                    <div class="product-container-price">
+                        <div class="product-price">{{k.price}} ₽</div>
+
+                    </div>
+                    <div class="product-container-text">
+                        <div class="product-text">{{k.title}}</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        {%endfor%}
+        {%endif%}
+
+
+
+
+    </div>
+
+</div>
+
+{% endblock%}

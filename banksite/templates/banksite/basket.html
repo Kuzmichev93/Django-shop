@@ -1,0 +1,93 @@
+{% extends 'banksite/base.html'%}
+{%load static%}
+{% block content %}
+
+<div class="main-basket">
+
+    <div class="basket-container">
+        <div class="list-container">
+            <div class="list-menu">
+                <div class="list">
+                    {% for k in men %}
+                    <div class="list-product-container">
+                        <div class="list-product-info-container">
+                            <div class="list-product-image">
+                                <img src="{{k.image.url}}">
+                            </div>
+                            <div class="list-product-info">{{k.title}}</div>
+                        </div>
+                        <div class="list-product-check-container">
+                            <label class="product-check">
+                                <div class="check-label"></div>
+                                <input  class="product-input" type="hidden" value="{{k.id}}">
+
+
+                            </label>
+                        </div>
+                        <div class="list-product-price-container">
+
+                            <h2 class="product-price-basket">{{k.price}}</h2>
+                                <h2 class="symbol">₽</h2>
+
+
+                        </div>
+                    </div>
+                    {% endfor %}
+
+
+                    {% for k in wom %}
+                    <div class="list-product-container">
+                        <div class="list-product-info-container">
+                            <div class="list-product-image">
+                                <img src="{{k.image.url}}">
+                            </div>
+                            <div class="list-product-info">{{k.title}}</div>
+                        </div>
+                        <div class="list-product-check-container">
+                            <label class="product-check">
+                                <div class="check-label"></div>
+                                <input  class="product-input" type="hidden" value="{{k.id}}">
+
+
+                            </label>
+                        </div>
+                        <div class="list-product-price-container">
+
+                            <h2 class="product-price-basket">{{k.price}}</h2>
+                            <h2 class="symbol">₽</h2>
+
+
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="total-price-container">
+            <div class="Price-menu">
+                <div class="Price-container">
+                    <div class="price-info">
+                        <div class="price-title-container">
+                            <h2 class="price-title">Итого</h2>
+                        </div>
+                        <div class="price-sum-container">
+                            <h2 class="price-sum"></h2>
+                            <h2 class="symbol-sum">₽</h2>
+                        </div>
+                    </div>
+                    <div class="price-button-container">
+                        <button class="price-button">
+                            <div>Заказать</div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</div>
+
+{% endblock %}

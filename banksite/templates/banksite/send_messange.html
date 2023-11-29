@@ -1,0 +1,28 @@
+{% extends 'banksite/base.html'%}
+{%block content%}
+
+<form action="{% url 'send_messange' %}" method="post">
+    {%csrf_token%}
+    <div class="reg">
+        <ul class="reg_list">
+
+            <li>
+                <div class="reg_title">Тема</div>
+                <input class="reg_input" type="text" name="header">
+            <li>
+
+            <li>
+                <div class="reg_title">Ваш email</div>
+                <input class="reg_input" type="text" name="email">
+            </li>
+
+            <li>
+                <div class="reg_title">Сообщение</div>
+                <textarea  type="text" name="content"></textarea>
+            </li>
+            <li><button type="submit" >Отправить</button></li>
+        </ul>
+
+    </div>
+</form>
+{% endblock content%}
