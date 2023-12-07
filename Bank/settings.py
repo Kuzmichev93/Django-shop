@@ -45,7 +45,8 @@ INSTALLED_APPS = [
     'banksite.apps.BanksiteConfig',
     'captcha',
     'django.forms',
-    'jquery'
+    'jquery',
+    'rest_framework'
 
     #'django.contrib.admin.apps.SimpleAdminConfig'
 ]

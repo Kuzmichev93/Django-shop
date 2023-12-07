@@ -26,22 +26,59 @@ from django import forms
 from django.core.mail import send_mail
 from django.core.paginator import Paginator
 #from banksite.templatetags.banksite_tags import gets
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+from json import loads
 # Create your views here.
+from banksite.serializers import UserSerialize
 
+
+@api_view(['GET','POST','PUT'])
+def userlist(request,id=None):
+        if request.method == 'GET':
+            user = User.objects.all()
+            users=[]
+            for k in user:
+               users.append({'title':k.username,'email':k.email,'firstname':k.first_name})
+
+            return Response(users)
+
+        elif id and request.method == 'PUT':
+            seializers = UserSerialize(request.data,
+                                       model=User,id=id)
+            seializers.is_valid()
+            seializers.save()
+            return Response(seializers.data())
+        elif request.method == 'POST' and not id:
+            print(request.headers)
+            seializers = UserSerialize(request.data,
+                               model=User)
+            seializers.is_valid()
+            seializers.save()
+            resp=Response(seializers.data())
+            resp.set_cookie(key='Test',value='Hello')
+
+            return resp
+        else:
+            return Response({'error':'Проверьте параметры url'})
 
 #@cache_page(60*15)
 def index(request):
-    men = men_shoes.objects.all()
-    wom = women_shoes.objects.all()
+    if request.method == "GET":
+        men = men_shoes.objects.all()
+        wom = women_shoes.objects.all()
 
-    if men and wom:
-        return render(request,"banksite/index.html",context={'men':men,'wom':wom})
+        if men and wom:
+            return render(request,"banksite/index.html",context={'men':men,'wom':wom})
 
-    elif men:
-        return render(request,"banksite/index.html",context={'men':men})
+        elif men:
+            return render(request,"banksite/index.html",context={'men':men})
 
-    elif wom:
-        return render(request,"banksite/index.html",context={'wom':wom})
+        elif wom:
+            return render(request,"banksite/index.html",context={'wom':wom})
+    else:
+        print(request.POST.headers)
+        return redirect("home")
 
 
 
